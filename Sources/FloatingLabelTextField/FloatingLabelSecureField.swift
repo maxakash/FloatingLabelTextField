@@ -1,7 +1,7 @@
 import SwiftUI
 
 @available(iOS 13, *)
-public struct FloatingLabelTextField: View {
+public struct FloatingLabelSecureField: View {
     
     @State private var placeHolder: String = ""
     @State private var placeHolderLabel: String = ""
@@ -13,6 +13,7 @@ public struct FloatingLabelTextField: View {
                 text: Binding<String> = .constant("") ) {
         self._text = text
         self.placeHolderValue = placeHolder
+        
     }
     
     private func updateEditMode(edit: Bool) {
@@ -36,16 +37,22 @@ public struct FloatingLabelTextField: View {
         return VStack(alignment: .leading) {
             Text(placeHolderLabel).font(.footnote).foregroundColor(.gray)
             
-            TextField(placeHolder, text: $text, onEditingChanged: { (edit) in
-                self.updateEditMode(edit: edit)
-            })
-                .font(Font.custom("poppins", size: 20))
-                .onAppear {
-                    self.placeHolder = self.placeHolderValue
+            
+            //is TextField is secure , using SecureField . Button is used as there is no onEditingChanged funtion for SecureField yet in SwiftUI
+            Button(action: {
+                self.updateEditMode(edit: true)
+            }) {
+                SecureField(placeHolder, text: $text)
+                    .foregroundColor(Color("textColor"))
                     
+                    .onAppear {
+                        self.placeHolder = self.placeHolderValue
+                }
             }
-            
-            
+            .font(Font.custom("poppins", size: 20))
+            .onAppear {
+                self.placeHolder = self.placeHolderValue
+            }
             
             Rectangle()
                 .fill(lineColor)

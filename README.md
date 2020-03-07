@@ -1,4 +1,4 @@
-# FloatingTextField
+# FloatingLabelTextField
 This Swift Package supports floating label for Text Field and Secure Field in SwiftUI
 
 
@@ -13,11 +13,11 @@ Select branch instead of package version while installing.
 # Usage
 
 ```
+import FloatingLabelTextField
+
+
 @State var username = ""
 @State var password = ""
-
-
-
 var body: some View {
   VStack {
     FloatingLabelTextField(placeHolder: "Input your name", text: $username, isSecure: false)
