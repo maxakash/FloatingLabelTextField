@@ -6,7 +6,7 @@ final class FloatingLabelTextFieldTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(FloatingLabelTextField().text, "Hello, World!")
+        XCTAssertEqual(FloatingLabelTextField(isSecure: false).text, "Hello, World!")
     }
 
     static var allTests = [

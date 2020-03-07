@@ -11,7 +11,7 @@ public struct FloatingLabelTextField: View {
     @State private var isActive: Bool = false
     
     public init(placeHolder: String = "Please Input",
-                text: Binding<String> = .constant(""),isSecure:Bool = "true or false") {
+                text: Binding<String> = .constant(""),isSecure:Bool ) {
         self._text = text
         self.placeHolderValue = placeHolder
         self.isSecure = isSecure
