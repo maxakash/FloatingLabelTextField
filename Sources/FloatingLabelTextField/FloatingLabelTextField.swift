@@ -1,6 +1,6 @@
 import SwiftUI
 
-//@available(iOS 13, *)
+@available(iOS 13, *)
 public struct FloatingLabelTextField: View {
     
     @State private var placeHolder: String = ""
