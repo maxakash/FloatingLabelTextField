@@ -9,7 +9,9 @@ This Swift Package supports floating label for Text Field and Secure Field in Sw
 # Installation
 Install through Swift Package Manager.
 
-Example
+Usage
+
+```
 @State var username = ""
 @State var password = ""
 
@@ -21,4 +23,6 @@ var body: some View {
     FloatingLabelTextField(placeHolder: "Input your age", text: $password, , isSecure: true)
   }
 }
+
+```
 
