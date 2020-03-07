@@ -4,14 +4,14 @@ import SwiftUI
 public struct FloatingLabelTextField: View {
     
     @State private var placeHolder: String = ""
-    @State private var isSecure: Bool = false
+    @State private var isSecure: Bool?
     @State private var placeHolderLabel: String = ""
     private var placeHolderValue: String = ""
     @Binding var text: String
     @State private var isActive: Bool = false
     
     public init(placeHolder: String = "Please Input",
-                text: Binding<String> = .constant(""),isSecure:Bool = false ) {
+                text: Binding<String> = .constant(""),isSecure:Bool ) {
         self._text = text
         self.placeHolderValue = placeHolder
         self.isSecure = isSecure
@@ -37,7 +37,7 @@ public struct FloatingLabelTextField: View {
         
         return VStack(alignment: .leading) {
             Text(placeHolderLabel).font(.footnote).foregroundColor(.gray)
-            if(isSecure){
+            if(isSecure!){
                 
         //is TextField is secure , using SecureField . Button is used as there is no onEditingChanged funtion for SecureField yet in SwiftUI
                 Button(action: {

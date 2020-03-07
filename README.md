@@ -8,6 +8,7 @@ This Swift Package supports floating label for Text Field and Secure Field in Sw
 
 # Installation
 Install through Swift Package Manager.
+Select branch instead of package version while installing.
 
 # Usage
 
