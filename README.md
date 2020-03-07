@@ -9,7 +9,7 @@ This Swift Package supports floating label for Text Field and Secure Field in Sw
 # Installation
 Install through Swift Package Manager.
 
-Usage
+# Usage
 
 ```
 @State var username = ""
