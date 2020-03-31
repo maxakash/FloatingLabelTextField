@@ -15,7 +15,7 @@ public struct FloatingLabelSecureField: View {
         self.placeHolderValue = placeHolder
         
     }
-    
+    //Function to remove focus from text field if tapped on another object.
     private func updateEditMode(edit: Bool) {
         if edit {
             self.placeHolderLabel = self.placeHolderValue
@@ -34,7 +34,7 @@ public struct FloatingLabelSecureField: View {
        
        return ZStack(alignment: .leading) {
            
-           
+           //Button is used as onEditing event is currently not available in SwiftUI
         Button(action: {
             self.updateEditMode(edit: true)
         }) {
@@ -49,10 +49,8 @@ public struct FloatingLabelSecureField: View {
                 .onAppear {
                     self.placeHolder = self.placeHolderValue
             }
-        }
-        
-           
-        
+        }  
+        //Text which acts as a floating label
            Text("\(placeHolderLabel)")
                 .font(.system(size: 15))
                .foregroundColor(.gray)
