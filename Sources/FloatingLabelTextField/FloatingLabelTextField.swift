@@ -15,6 +15,8 @@ public struct FloatingLabelTextField: View {
         self.placeHolderValue = placeHolder
     }
     
+    //Function to remove focus from text field if tapped on another object.
+
     private func updateEditMode(edit: Bool) {
         if edit {
             self.placeHolderLabel = self.placeHolderValue
@@ -33,7 +35,7 @@ public struct FloatingLabelTextField: View {
         
         return ZStack(alignment: .leading) {
             
-            
+            //onEditingChanged make the placeholder move to the top of the text field.
             TextField(placeHolder, text: $text, onEditingChanged: { (edit) in
                 self.updateEditMode(edit: edit)
             })
@@ -49,6 +51,7 @@ public struct FloatingLabelTextField: View {
                     
             }
             
+            //Text which acts as a floating label
             Text("\(placeHolderLabel)")
                 .font(.system(size: 15))
                 .foregroundColor(.gray)
